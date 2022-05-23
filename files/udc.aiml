@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <category>
+        <pattern>*</pattern>
+        <template><delay>2</delay>I'm sorry. I don't have an answer for that. To start from the beginning say "Hello".</template>
+    </category>
+    
+    <category>
+        <pattern>HELLO</pattern>
+        <template><delay>1</delay>Hello. I am an automated career helper. After answering a few short questions I will recommend a career choice for you. First off, what is your name? (Type your response as "My name is...")</template>
+    </category>
+    
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template><delay>1</delay>Thank you, <set name = "username"><star /></set>. Would you like to begin? (Type Yes or No)</template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <template><delay>2</delay>Come back when you are ready. Say "Hello" when you are ready to begin.</template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <template><delay>2</delay>Great! I'm going to ask you a few basic questions. For each one select the answer button that fits you the most.<delay>1</delay>For the first question, do you like to solve puzzles?
+            <button>
+                <text>Yes</text>
+                <postback>YESPUZZLE</postback>
+            </button>
+            <button>
+                <text>No</text>
+                <postback>NOPUZZLE</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YESPUZZLE</pattern>
+        <template>
+            <delay>2</delay>So do I. Do you prefer to think in an abstract or concrete manner?
+            <button>
+                <text>Abstract</text>
+                <postback>SOFTWAREDEV</postback>
+            </button>
+            <button>
+                <text>Concrete</text>
+                <postback>DATASCIENCE</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NOPUZZLE</pattern>
+        <template>
+            <delay>1</delay>Not a problem! Would you say that you're good at problem solving?
+            <button>
+                <text>Yes</text>
+                <postback>WEBDEV</postback>
+            </button>
+            <button>
+                <text>No</text>
+                <postback>NOPUZZLENOPROBLEM</postback>
+            </button>
+        </template>
+    </category> 
+ 
+    <category>
+        <pattern>NOPUZZLENOPROBLEM</pattern>
+        <template>
+            <delay>1</delay>Do you like working with other people?
+            <button>
+                <text>Yes</text>
+                <postback>COMPHARDWARE</postback>
+            </button>
+            <button>
+                <text>No</text>
+                <postback>NOTOALL</postback>
+            </button>
+        </template>
+    </category>
+
+    <category>
+        <pattern>START AGAIN</pattern>
+        <template><delay>2</delay>Let us give it another shot.<delay>1</delay>Do you like to solve puzzles?
+            <button>
+                <text>Yes</text>
+                <postback>YESPUZZLE</postback>
+            </button>
+            <button>
+                <text>No</text>
+                <postback>NOPUZZLE</postback>
+            </button>
+        </template>
+    </category>
+    
+</aiml>
