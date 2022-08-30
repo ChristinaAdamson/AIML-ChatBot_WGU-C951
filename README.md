@@ -1,2 +1,2 @@
-# c951chatbot-WGU
-Contains the files for c951chatbot
+# AIML-Chat-Bot_WGU-C951
+Contains the files for C951 chat bot.
